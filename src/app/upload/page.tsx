@@ -42,7 +42,7 @@ export default function Page() {
 
       const { data, error } = await supabase.storage
         .from('uploads')
-        .upload(`images/${uuidv4()}`, file);
+        .upload(`temp/${uuidv4()}`, file);
 
       setError(error ? true : false);
       setErrorMessage(error?.message);

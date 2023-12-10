@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center ">
       <div>
-        <h1 className="text-6xl font-bold mt-8 text-blue-300 text-center">Supertitle</h1>
+        <h1 className="text-6xl font-bold mt-8 p-12 text-blue-300 text-center">Supertitle</h1>
         <p className="text-xl mt-4 font-semibold text-center">Add subtitle and audio using AI to any video.</p>
       </div>
       <div className='mt-5'>

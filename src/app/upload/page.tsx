@@ -4,8 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import supabase from "@/lib/storage/client";
 
 export default function Page() {
+  // Respose from server is also undefined
   const [udata, setUdata] = useState<string | undefined>("");
   const [error, setError] = useState<boolean>(false);
+  // Error also returns undefined
   const [errorMessage, setErrorMessage] = useState<string | undefined>("");
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [imageList, setImageList] = useState<string[]>([]);

@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Supertitle - Subtitle maker',
   description: 'Supertitle, a versatile subtitle maker, utilizes AI to seamlessly add subtitles and audio to videos in any language, serving as both a subtitle generator and translator',
-  keywords: 'subtitle ,ai subtitle generator,subtitle generator,subtitle translator,jav subtitle indo,jav subtitle,add subtitle to video,subtitle maker,video subtitle maker'
+  keywords: 'subtitle ,ai subtitle generator,subtitle generator,subtitle translator,jav subtitle indo,jav subtitle,add subtitle to video,subtitle maker,video subtitle maker,Video Subtitle Generator'
 }
 
 export default function RootLayout({

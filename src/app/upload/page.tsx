@@ -3,38 +3,42 @@ import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import supabase from "@/lib/storage/client";
 
-export default function Page() {
+
+export default async function Page() {
   // Respose from server is also undefined
   const [udata, setUdata] = useState<string | undefined>("");
   const [error, setError] = useState<boolean>(false);
   // Error also returns undefined
   const [errorMessage, setErrorMessage] = useState<string | undefined>("");
   const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [imageList, setImageList] = useState<string[]>([]);
+  // const [imageList, setImageList] = useState<string[]>([]);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const fetchImageList = async () => {
-    try {
-      const { data, error } = await supabase
-        .storage
-        .from('uploads')
-        .list('images', { limit: 5, offset: 0 });
+  // const { data: { user } } = await supabase.auth.getUser()
 
-      if (error) {
-        throw error;
-      }
 
-      const imagePaths = data?.map((item) => item.name) || [];
-      setImageList(imagePaths);
-    } catch (error) {
-      console.error("Error fetching image list:", error);
-    }
-  };
+  // const fetchImageList = async () => {
+  //   try {
+  //     const { data, error } = await supabase
+  //       .storage
+  //       .from('uploads')
+  //       .list('images', { limit: 5, offset: 0 });
 
-  useEffect(() => {
-    fetchImageList();
-  }, []); 
+  //     if (error) {
+  //       throw error;
+  //     }
+
+  //     const imagePaths = data?.map((item) => item.name) || [];
+  //     setImageList(imagePaths);
+  //   } catch (error) {
+  //     console.error("Error fetching image list:", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchImageList();
+  // }, []);
 
   async function uploadFile() {
     const file = fileInputRef.current?.files?.[0];
@@ -52,23 +56,25 @@ export default function Page() {
 
       setIsUploading(false);
 
-      fetchImageList();
+      // fetchImageList();
     } else {
       setError(true);
       setErrorMessage("Please select a file.");
     }
   }
 
+
+
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen">
         <div className="p-6 rounded shadow-md w-96  ">
-                <div className="text-5xl font-bold text-center my-8">
-                Upload Image 
-                </div>
-                <div className="text-lg mb-5 mt-2 font-semibold text-red-500 text-center">
-                images are public so don't upload anything sensitive
-                </div>
+          <div className="text-5xl font-bold text-center my-8">
+            Upload Image
+          </div>
+          <div className="text-lg mb-5 mt-2 font-semibold text-red-500 text-center">
+            images are public so don't upload anything sensitive
+          </div>
           <input
             type="file"
             ref={fileInputRef}
@@ -85,12 +91,12 @@ export default function Page() {
             {isUploading ? 'Uploading...' : 'Upload File'}
           </button>
           <div className="text-center mb-4">Path send from server</div>
-          {udata && <div className="max-w-full"> {udata}</div> }
+          {udata && <div className="max-w-full"> {udata}</div>}
           <div className="mt-4">
             <hr />
             <h3 className="text-lg font-semibold mb-2 mt-5">Uploaded Images:</h3>
             <div className="text-xl font-semibold text-blue-400">
-                Feature coming soon
+              Feature coming soon
             </div>
             {/* <ul>
               {imageList.map((imagePath, index) => (

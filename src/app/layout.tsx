@@ -5,7 +5,7 @@ import Header from 'next/head'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 // import Navbar from '@/app/components/[header]/Header'
-import Navbar from '@/app/components/[header]/Navbar';
+import Navbar from '@/app/components/[header]/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 

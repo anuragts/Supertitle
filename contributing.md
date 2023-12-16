@@ -1,6 +1,6 @@
-# Contributing to Earn
+# Contributing to Supertitle
 
-Whether you're looking to raise an issue, fix a bug, or add a feature, we're thrilled you're here to improve the project. This document outlines how to become a contributor to this project.
+Whether you're looking to raise an issue, fix a bug, or add a feature, This document helps you contribute to this project.
 
 ### Code of Conduct
 

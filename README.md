@@ -32,3 +32,6 @@ pnpm build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+#### Contributing
+Check out the [contributing.md](contributing.md) for guidelines on how to proceed contributing to supertitle repository
